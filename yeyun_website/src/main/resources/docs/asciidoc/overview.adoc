@@ -1,0 +1,36 @@
+= janis Manage Swagger RESTful APIs
+
+
+[[_overview]]
+== Overview
+综合管理 Swagger API 服务
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : janis
+__Contact Email__ : janis@163.com.cn
+
+
+=== License information
+[%hardbreaks]
+__Terms of service__ : http://swagger.io/
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8888
+__BasePath__ : /
+
+
+=== Tags
+
+* hello-controller : 检查模板操作
+
+
+

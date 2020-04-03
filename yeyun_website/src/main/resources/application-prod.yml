@@ -1,0 +1,36 @@
+#sharding:
+#        default-database-strategy:
+#          inline:
+#            algorithm-expression: db$->{id % 3}
+#            sharding-column: id
+#        tables:
+#          book:
+#            actual-data-nodes: db$->{0..2}.book_$->{0..2}
+#            table-strategy:
+#              inline:
+#                algorithm-expression: book_$->{count % 3}
+#                sharding-column: count
+#    datasource:
+#      db0:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbc-url: jdbc:mysql://localhost:3306/db0?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#        password: root
+#        type: com.zaxxer.hikari.HikariDataSource
+#        username: root
+#      db1:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbc-url: jdbc:mysql://localhost:3306/db1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#        password: root
+#        type: com.zaxxer.hikari.HikariDataSource
+#        username: root
+#      db2:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbc-url: jdbc:mysql://localhost:3306/db2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#        password: root
+#        type: com.zaxxer.hikari.HikariDataSource
+#        username: root
+#      dsmaster: ''
+#      names: db0,db1,db2
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
